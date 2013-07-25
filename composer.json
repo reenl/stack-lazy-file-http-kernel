@@ -1,0 +1,23 @@
+{
+    "name": "reenl/stack-mount",
+    "description": "Symfony HTTP kernels to lazy load other kernels.",
+    "keywords": ["stack", "mount", "lazy"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Reen Lokum",
+            "email": "reen.lokum@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/http-foundation": "~2.1",
+        "symfony/http-kernel": "~2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": { "Stack\\Mount": "src/" }
+    }
+}
