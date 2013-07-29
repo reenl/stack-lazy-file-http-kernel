@@ -1,10 +1,9 @@
 <?php
-namespace MountTest;
+namespace Stack;
 
-use Stack\Mount\FileMountHttpKernel;
 use Symfony\Component\HttpFoundation\Request;
 
-class FileMountHttpKernelTest extends \PHPUnit_Framework_TestCase
+class LazyFileHttpKernelTest extends \PHPUnit_Framework_TestCase
 {
     /**
      *
@@ -13,7 +12,7 @@ class FileMountHttpKernelTest extends \PHPUnit_Framework_TestCase
      */
     public function testRejectNonFile()
     {
-        new FileMountHttpKernel('doesNotExist');
+        new LazyFileHttpKernel('doesNotExist');
     }
 
     /**
@@ -23,13 +22,13 @@ class FileMountHttpKernelTest extends \PHPUnit_Framework_TestCase
      */
     public function testFileIsNotMountable()
     {
-        $kernel = new FileMountHttpKernel(__DIR__.'/not-mountable.php');
+        $kernel = new LazyFileHttpKernel(__DIR__.'/not-mountable.php');
         $kernel->handle(new Request());
     }
 
     public function testHandle()
     {
-        $kernel = new FileMountHttpKernel(__DIR__.'/mountable.php');
+        $kernel = new LazyFileHttpKernel(__DIR__.'/mountable.php');
         $response = $kernel->handle(new Request());
 
         $this->assertEquals('Hello world!', $response->getContent());

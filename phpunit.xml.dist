@@ -5,8 +5,8 @@
          backupGlobals="false"
          verbose="true">
     <testsuites>
-        <testsuite name="Stack\Mount">
-            <directory suffix="Test.php">tests/MountTest</directory>
+        <testsuite name="Stack">
+            <directory suffix="Test.php">tests/Stack</directory>
         </testsuite>
     </testsuites>
 

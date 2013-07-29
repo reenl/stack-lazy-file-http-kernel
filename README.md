@@ -1,3 +1,3 @@
-# reenl/stack-mount
+# reenl/stack-lazy-file-http-kernel
 
-reenl/stack-mount provides a Symfony HTTP kernels to lazy load other kernels.
+Provides a kernel to lazy load files containing a Symfony http kernel.
